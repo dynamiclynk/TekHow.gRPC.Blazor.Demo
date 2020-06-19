@@ -1,0 +1,16 @@
+using System.Threading.Tasks;
+using Grpc.Net.Client;
+
+namespace blazor.Helpers
+{
+    public static class ChatClient
+    {
+        public static async Task SendGreetingAsync()
+        {
+            using var channel = GrpcChannel.ForAddress("https://localhost:5001");
+            var client = new Greeter.GreeterClient(channel);
+            var reply = await client.SayHelloAsync(
+                              new HelloRequest { Name = "GreeterClient" });
+        }
+    }
+}
