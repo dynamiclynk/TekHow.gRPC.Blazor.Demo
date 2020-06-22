@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Grpc.AspNetCore" Version="2.27.0" />
+    <PackageReference Include="TekHow.RabbitMq" Version="1.0.6" />
   </ItemGroup>
 
 </Project>
